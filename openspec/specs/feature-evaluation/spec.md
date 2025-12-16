@@ -1,8 +1,11 @@
 # feature-evaluation Specification
 
 ## Purpose
+
 TBD - created by archiving change add-initial-implementation. Update Purpose after archive.
+
 ## Requirements
+
 ### Requirement: User Context Input
 
 The system SHALL accept user context containing userId, region, and plan as input for feature evaluation.
@@ -71,4 +74,3 @@ The system SHALL use static, predefined rules for feature evaluation (e.g., Pro 
 - **WHEN** feature evaluation is performed
 - **THEN** rules are read from static configuration (not external sources)
 - **AND** rules do not change during runtime
-
