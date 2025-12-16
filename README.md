@@ -9,43 +9,43 @@ This project demonstrates spec-driven development using the [OpenSpec](https://g
 ## Prerequisites
 
 - Node.js 20 or higher
-- pnpm 8 or higher
+- npm 8 or higher
 
 ## Setup
 
 1. **Install dependencies:**
 
    ```bash
-   pnpm install
+   npm install
    ```
 
 2. **Verify setup:**
    ```bash
-   pnpm run type-check
-   pnpm run lint
-   pnpm run test
+   npm run type-check
+   npm run lint
+   npm run test
    ```
 
 ## Available Scripts
 
 ### Development
 
-- `pnpm run build` - Compile TypeScript to JavaScript
-- `pnpm run type-check` - Type check without emitting files
-- `pnpm run clean` - Remove build artifacts
+- `npm run build` - Compile TypeScript to JavaScript
+- `npm run type-check` - Type check without emitting files
+- `npm run clean` - Remove build artifacts
 
 ### Code Quality
 
-- `pnpm run lint` - Run ESLint
-- `pnpm run lint:fix` - Run ESLint and fix auto-fixable issues
-- `pnpm run format` - Format code with Prettier
-- `pnpm run format:check` - Check code formatting
+- `npm run lint` - Run ESLint
+- `npm run lint:fix` - Run ESLint and fix auto-fixable issues
+- `npm run format` - Format code with Prettier
+- `npm run format:check` - Check code formatting
 
 ### Testing
 
-- `pnpm run test` - Run tests once
-- `pnpm run test:watch` - Run tests in watch mode
-- `pnpm run test:coverage` - Run tests with coverage report
+- `npm run test` - Run tests once
+- `npm run test:watch` - Run tests in watch mode
+- `npm run test:coverage` - Run tests with coverage report
 
 ## Project Structure
 
