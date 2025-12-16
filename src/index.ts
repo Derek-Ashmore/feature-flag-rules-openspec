@@ -105,9 +105,7 @@ const staticRules: FeatureRule[] = [
  * // Returns: { enabledFeatures: ["advanced-analytics", "priority-support", "api-access", "basic-dashboard", "email-support", "region-specific-feature"] }
  * ```
  */
-export function evaluateFeatures(
-  context: unknown
-): FeatureEvaluationResult {
+export function evaluateFeatures(context: unknown): FeatureEvaluationResult {
   validateUserContext(context);
 
   const enabledFeatures: string[] = [];
