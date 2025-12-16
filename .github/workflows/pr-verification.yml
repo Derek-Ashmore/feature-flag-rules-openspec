@@ -35,6 +35,13 @@ jobs:
       - name: Type check
         run: npm run type-check
 
-      - name: Run tests
-        run: npm run test
+      - name: Run tests with coverage
+        run: npm run test:coverage -- --run
+
+      - name: Comment coverage on PR
+        uses: mattallty/jest-coverage-comment-action@v3
+        if: github.event_name == 'pull_request'
+        with:
+          coverage-file: coverage/coverage-summary.json
+          update-comment: true
 
