@@ -44,16 +44,16 @@ This is a greenfield TypeScript project for a feature flag rules engine. We need
 - esbuild: Faster but adds dependency, not needed initially
 - SWC: Fast but adds dependency, tsc is sufficient
 
-### Decision: Use pnpm as Package Manager
+### Decision: Use npm as Package Manager
 **Rationale:**
-- Faster than npm
-- Better disk space efficiency
-- Stricter dependency resolution
-- Growing adoption in TypeScript projects
+- Standard Node.js package manager (no additional setup required)
+- Widely adopted and well-supported
+- Native GitHub Actions caching support
+- Sufficient for project needs
 
 **Alternatives considered:**
-- npm: Standard but slower
-- yarn: Similar to pnpm but pnpm has better performance
+- pnpm: Faster and more efficient, but requires lock file management
+- yarn: Similar to npm but npm is more standard
 
 ### Decision: GitHub Actions for CI/CD
 **Rationale:**
@@ -72,7 +72,7 @@ This is a greenfield TypeScript project for a feature flag rules engine. We need
 **Mitigation:** Test ESM imports early, use Vitest which has native ESM support
 
 ### Risk: Tool Version Conflicts
-**Mitigation:** Pin dependency versions, use lock files (pnpm-lock.yaml)
+**Mitigation:** Pin dependency versions, use lock files (package-lock.json)
 
 ### Trade-off: Simplicity vs Features
 **Decision:** Start simple (tsc), add complexity (esbuild) only when needed
