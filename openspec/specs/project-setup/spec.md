@@ -1,8 +1,11 @@
 # project-setup Specification
 
 ## Purpose
+
 TBD - created by archiving change initialize-project-setup. Update Purpose after archive.
+
 ## Requirements
+
 ### Requirement: TypeScript Project Configuration
 
 The project SHALL be configured as a TypeScript project with strict type checking enabled and ESM module support.
@@ -81,4 +84,3 @@ The project SHALL include a CI/CD workflow that automatically verifies pull requ
 - **WHEN** the CI/CD workflow completes
 - **THEN** status is reported on the pull request
 - **AND** developers can see which checks passed or failed
-
