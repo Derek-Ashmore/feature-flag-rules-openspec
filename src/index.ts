@@ -8,4 +8,3 @@
 export function placeholder(): void {
   // Placeholder function to ensure the project compiles
 }
-

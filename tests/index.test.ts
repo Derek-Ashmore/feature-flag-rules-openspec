@@ -7,4 +7,3 @@ describe("Placeholder", () => {
     expect(typeof placeholder).toBe("function");
   });
 });
-

@@ -14,6 +14,7 @@ This project demonstrates spec-driven development using the [OpenSpec](https://g
 ## Setup
 
 1. **Install dependencies:**
+
    ```bash
    pnpm install
    ```
@@ -28,17 +29,20 @@ This project demonstrates spec-driven development using the [OpenSpec](https://g
 ## Available Scripts
 
 ### Development
+
 - `pnpm run build` - Compile TypeScript to JavaScript
 - `pnpm run type-check` - Type check without emitting files
 - `pnpm run clean` - Remove build artifacts
 
 ### Code Quality
+
 - `pnpm run lint` - Run ESLint
 - `pnpm run lint:fix` - Run ESLint and fix auto-fixable issues
 - `pnpm run format` - Format code with Prettier
 - `pnpm run format:check` - Check code formatting
 
 ### Testing
+
 - `pnpm run test` - Run tests once
 - `pnpm run test:watch` - Run tests in watch mode
 - `pnpm run test:coverage` - Run tests with coverage report
@@ -76,6 +80,7 @@ See `openspec/AGENTS.md` for detailed workflow instructions.
 5. Submit a pull request
 
 The CI/CD workflow will automatically verify:
+
 - Code formatting (Prettier)
 - Linting (ESLint)
 - Type checking (TypeScript)
