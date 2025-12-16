@@ -298,7 +298,7 @@ describe("Feature Evaluation", () => {
       };
 
       const result1a = evaluateFeatures(context1);
-      const result2 = evaluateFeatures(context2);
+      const _result2 = evaluateFeatures(context2);
       const result1b = evaluateFeatures(context1);
 
       // First context should return same result before and after second evaluation
