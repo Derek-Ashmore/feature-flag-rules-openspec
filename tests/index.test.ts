@@ -1,5 +1,32 @@
-import { describe, it, expect } from "vitest";
-import { evaluateFeatures, type UserContext } from "../src/index.js";
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { afterEach, describe, expect, it } from "vitest";
+import {
+  evaluateFeatures,
+  loadConfigurationFromFile,
+  type FeatureConfiguration,
+  type UserContext,
+} from "../src/index.js";
+
+const tempPaths: string[] = [];
+
+function writeTempConfig(content: string): string {
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), "feature-config-"));
+  const filePath = path.join(dir, "config.yaml");
+  fs.writeFileSync(filePath, content, "utf8");
+  tempPaths.push(dir);
+  return filePath;
+}
+
+afterEach(() => {
+  while (tempPaths.length > 0) {
+    const dir = tempPaths.pop();
+    if (dir && fs.existsSync(dir)) {
+      fs.rmSync(dir, { recursive: true, force: true });
+    }
+  }
+});
 
 describe("Feature Evaluation", () => {
   describe("User Context Input", () => {
@@ -323,6 +350,121 @@ describe("Feature Evaluation", () => {
       results.forEach((result) => {
         expect(result.enabledFeatures.sort()).toEqual(firstResult);
       });
+    });
+  });
+
+  describe("Configuration File Support", () => {
+    it("should load configuration from a file and use lists for evaluation", () => {
+      const configFilePath = writeTempConfig(
+        [
+          "userids:",
+          "  - user-special",
+          "regions:",
+          "  - eu",
+          "plans:",
+          "  - enterprise",
+        ].join("\n")
+      );
+
+      const context: UserContext = {
+        userId: "user-special",
+        region: "eu",
+        plan: "enterprise",
+      };
+
+      const result = evaluateFeatures(context, { configFilePath });
+
+      expect(result.enabledFeatures).toContain("user-targeted-feature");
+      expect(result.enabledFeatures).toContain("region-targeted-feature");
+      expect(result.enabledFeatures).toContain("plan-targeted-feature");
+    });
+
+    it("should validate configuration structure and throw descriptive errors", () => {
+      const configFilePath = writeTempConfig("userids: not-an-array");
+
+      expect(() => loadConfigurationFromFile(configFilePath)).toThrow(
+        'Configuration field "userids" from file must be an array of strings'
+      );
+    });
+
+    it("should reject missing configuration files with descriptive error", () => {
+      const missingPath = path.join(os.tmpdir(), "feature-config-missing.yaml");
+
+      expect(() =>
+        evaluateFeatures(
+          { userId: "user123", region: "us", plan: "pro" },
+          { configFilePath: missingPath }
+        )
+      ).toThrow(`Configuration file not found at path: ${missingPath}`);
+    });
+
+    it("should use programmatic configuration when no file is provided", () => {
+      const programmaticConfig: FeatureConfiguration = {
+        plans: ["pro"],
+      };
+
+      const context: UserContext = {
+        userId: "user123",
+        region: "us",
+        plan: "pro",
+      };
+
+      const result = evaluateFeatures(context, {
+        configuration: programmaticConfig,
+      });
+
+      expect(result.enabledFeatures).toContain("plan-targeted-feature");
+    });
+
+    it("should prefer file configuration when both sources exist by default", () => {
+      const configFilePath = writeTempConfig(
+        ["userids:", "  - file-user", "plans:", "  - basic"].join("\n")
+      );
+
+      const programmaticConfig: FeatureConfiguration = {
+        userids: ["programmatic-user"],
+        plans: ["pro"],
+      };
+
+      const context: UserContext = {
+        userId: "programmatic-user",
+        region: "us",
+        plan: "pro",
+      };
+
+      const result = evaluateFeatures(context, {
+        configFilePath,
+        configuration: programmaticConfig,
+      });
+
+      expect(result.enabledFeatures).not.toContain("user-targeted-feature");
+      expect(result.enabledFeatures).not.toContain("plan-targeted-feature");
+    });
+
+    it("should allow explicitly selecting programmatic configuration when both are available", () => {
+      const configFilePath = writeTempConfig(
+        ["userids:", "  - file-user", "plans:", "  - basic"].join("\n")
+      );
+
+      const programmaticConfig: FeatureConfiguration = {
+        userids: ["programmatic-user"],
+        plans: ["pro"],
+      };
+
+      const context: UserContext = {
+        userId: "programmatic-user",
+        region: "us",
+        plan: "pro",
+      };
+
+      const result = evaluateFeatures(context, {
+        configFilePath,
+        configuration: programmaticConfig,
+        configSource: "programmatic",
+      });
+
+      expect(result.enabledFeatures).toContain("user-targeted-feature");
+      expect(result.enabledFeatures).toContain("plan-targeted-feature");
     });
   });
 });
