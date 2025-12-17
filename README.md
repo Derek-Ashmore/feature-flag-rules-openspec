@@ -62,6 +62,34 @@ plans:
   - enterprise
 ```
 
+Example with per-user region/plan combos (one document per user):
+
+```yaml
+# user-alpha: eu + enterprise
+userids:
+  - user-alpha
+regions:
+  - eu
+plans:
+  - enterprise
+---
+# user-beta: us + pro
+userids:
+  - user-beta
+regions:
+  - us
+plans:
+  - pro
+---
+# user-gamma: apac + starter
+userids:
+  - user-gamma
+regions:
+  - apac
+plans:
+  - starter
+```
+
 All fields are optional; when present they must be arrays of non-empty strings.
 
 ### Usage
