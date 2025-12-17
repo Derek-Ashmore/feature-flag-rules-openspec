@@ -175,8 +175,7 @@ function buildRules(configuration?: FeatureConfiguration): FeatureRule[] {
   const planSet = new Set(configuration?.plans ?? []);
 
   const planMatches = (context: UserContext, plan: string): boolean =>
-    context.plan === plan &&
-    (planSet.size === 0 || planSet.has(context.plan));
+    context.plan === plan && (planSet.size === 0 || planSet.has(context.plan));
 
   const regionMatches = (context: UserContext): boolean => {
     if (regionSet.size > 0) {
@@ -259,10 +258,7 @@ function resolveConfiguration(
   }
 
   if (options.configuration) {
-    return validateConfigurationShape(
-      options.configuration,
-      "programmatic"
-    );
+    return validateConfigurationShape(options.configuration, "programmatic");
   }
 
   return undefined;

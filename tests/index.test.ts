@@ -388,10 +388,7 @@ describe("Feature Evaluation", () => {
     });
 
     it("should reject missing configuration files with descriptive error", () => {
-      const missingPath = path.join(
-        os.tmpdir(),
-        "feature-config-missing.yaml"
-      );
+      const missingPath = path.join(os.tmpdir(), "feature-config-missing.yaml");
 
       expect(() =>
         evaluateFeatures(
@@ -421,12 +418,7 @@ describe("Feature Evaluation", () => {
 
     it("should prefer file configuration when both sources exist by default", () => {
       const configFilePath = writeTempConfig(
-        [
-          "userids:",
-          "  - file-user",
-          "plans:",
-          "  - basic",
-        ].join("\n")
+        ["userids:", "  - file-user", "plans:", "  - basic"].join("\n")
       );
 
       const programmaticConfig: FeatureConfiguration = {
@@ -451,12 +443,7 @@ describe("Feature Evaluation", () => {
 
     it("should allow explicitly selecting programmatic configuration when both are available", () => {
       const configFilePath = writeTempConfig(
-        [
-          "userids:",
-          "  - file-user",
-          "plans:",
-          "  - basic",
-        ].join("\n")
+        ["userids:", "  - file-user", "plans:", "  - basic"].join("\n")
       );
 
       const programmaticConfig: FeatureConfiguration = {
