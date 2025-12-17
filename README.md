@@ -47,6 +47,36 @@ This project demonstrates spec-driven development using the [OpenSpec](https://g
 - `npm run test:watch` - Run tests in watch mode
 - `npm run test:coverage` - Run tests with coverage report
 
+## Configuration File Support
+
+The rules engine supports file-based configuration (YAML) alongside programmatic configuration. File-based configuration takes precedence when both sources are provided, but you can explicitly choose a source.
+
+### YAML format
+
+```yaml
+userids:
+  - user-special
+regions:
+  - eu
+plans:
+  - enterprise
+```
+
+All fields are optional; when present they must be arrays of non-empty strings.
+
+### Usage
+
+```ts
+import { evaluateFeatures } from "feature-flag-rules-openspec";
+
+const result = evaluateFeatures(
+  { userId: "user-special", region: "eu", plan: "enterprise" },
+  { configFilePath: "./config.yaml" }
+);
+```
+
+To force programmatic configuration when a file path is also provided, pass `configSource: "programmatic"`.
+
 ## Project Structure
 
 ```
