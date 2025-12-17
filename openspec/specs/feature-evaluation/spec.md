@@ -3,7 +3,9 @@
 ## Purpose
 
 TBD - created by archiving change add-initial-implementation. Update Purpose after archive.
+
 ## Requirements
+
 ### Requirement: User Context Input
 
 The system SHALL accept user context containing userId, region, and plan as input for feature evaluation.
@@ -130,4 +132,3 @@ The system SHALL support both file-based configuration and programmatic configur
 - **WHEN** both file-based and programmatic configuration are available
 - **THEN** the system uses file-based configuration
 - **OR** the system allows explicit selection of configuration source
-
