@@ -10,15 +10,15 @@ This project demonstrates spec-driven development using the [OpenSpec](https://g
 
 This project was developed following the OpenSpec workflow. The steps below outline the progression from initialization through implementation, organized by git tags:
 
-| Tag | Description |
-|-----|-------------|
-| [`1_openspec_init`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/1_openspec_init) | Initialize OpenSpec |
-| [`2_project_setup_proposal`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/2_project_setup_proposal) | Propose change to setup the project |
-| [`3_project_setup_archive`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/3_project_setup_archive) | Implement and archive change to setup the project |
-| [`4_initial_implementation_proposal`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/4_initial_implementation_proposal) | Propose initial functionality with design and plan |
-| [`5_initial_implementation_archive`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/5_initial_implementation_archive) | Implement initial functionality |
-| [`6_config_file_proposal`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/6_config_file_proposal) | Propose configuration file enhancement with design and plan |
-| [`7_config_file_archive`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/7_config_file_archive) | Implement configuration file enhancement |
+| Tag                                                                                                                                           | Description                                                 |
+| --------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| [`1_openspec_init`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/1_openspec_init)                                     | Initialize OpenSpec                                         |
+| [`2_project_setup_proposal`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/2_project_setup_proposal)                   | Propose change to setup the project                         |
+| [`3_project_setup_archive`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/3_project_setup_archive)                     | Implement and archive change to setup the project           |
+| [`4_initial_implementation_proposal`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/4_initial_implementation_proposal) | Propose initial functionality with design and plan          |
+| [`5_initial_implementation_archive`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/5_initial_implementation_archive)   | Implement initial functionality                             |
+| [`6_config_file_proposal`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/6_config_file_proposal)                       | Propose configuration file enhancement with design and plan |
+| [`7_config_file_archive`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/7_config_file_archive)                         | Implement configuration file enhancement                    |
 
 ## Prerequisites
 
