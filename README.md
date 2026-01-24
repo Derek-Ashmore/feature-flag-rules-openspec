@@ -8,36 +8,35 @@ This project demonstrates spec-driven development using the [OpenSpec](https://g
 
 ## OpenSpec Artifacts
 
-| Type | Name | Path |
-|------|------|------|
-| **Project Definition** | Project Context | [`openspec/project.md`](openspec/project.md) |
-| **Current Specification** | Feature Evaluation | [`openspec/specs/feature-evaluation/spec.md`](openspec/specs/feature-evaluation/spec.md) |
-| **Current Specification** | Project Setup | [`openspec/specs/project-setup/spec.md`](openspec/specs/project-setup/spec.md) |
-| **Archived Change Proposal** | Initialize Project Setup | [`openspec/changes/archive/2025-12-16-initialize-project-setup/`](openspec/changes/archive/2025-12-16-initialize-project-setup/) |
-| **Archived Change Proposal** | Add Initial Implementation | [`openspec/changes/archive/2025-12-16-add-initial-implementation/`](openspec/changes/archive/2025-12-16-add-initial-implementation/) |
-| **Archived Change Proposal** | Add Configuration File Support | [`openspec/changes/archive/2025-12-17-add-config-file-support/`](openspec/changes/archive/2025-12-17-add-config-file-support/) |
+| Type                         | Name                           | Path                                                                                                                                 |
+| ---------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **Project Definition**       | Project Context                | [`openspec/project.md`](openspec/project.md)                                                                                         |
+| **Current Specification**    | Feature Evaluation             | [`openspec/specs/feature-evaluation/spec.md`](openspec/specs/feature-evaluation/spec.md)                                             |
+| **Current Specification**    | Project Setup                  | [`openspec/specs/project-setup/spec.md`](openspec/specs/project-setup/spec.md)                                                       |
+| **Archived Change Proposal** | Initialize Project Setup       | [`openspec/changes/archive/2025-12-16-initialize-project-setup/`](openspec/changes/archive/2025-12-16-initialize-project-setup/)     |
+| **Archived Change Proposal** | Add Initial Implementation     | [`openspec/changes/archive/2025-12-16-add-initial-implementation/`](openspec/changes/archive/2025-12-16-add-initial-implementation/) |
+| **Archived Change Proposal** | Add Configuration File Support | [`openspec/changes/archive/2025-12-17-add-config-file-support/`](openspec/changes/archive/2025-12-17-add-config-file-support/)       |
 
 ## OpenSpec Development Steps
 
 This project was developed following the OpenSpec workflow. The steps below outline the progression from initialization through implementation, organized by git tags:
 
-| Tag                                                                                                                                           | Phase      | Description                                                 |
-| --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ----------------------------------------------------------- |
-| [`1_openspec_init`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/1_openspec_init)                                     | Init       | Initialize OpenSpec                                         |
-| [`2_project_setup_proposal`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/2_project_setup_proposal)                   | Proposal   | Propose change to setup the project                         |
-| [`3_project_setup_archive`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/3_project_setup_archive)                     | Apply + Archive | Implement and archive change to setup the project       |
-| [`4_initial_implementation_proposal`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/4_initial_implementation_proposal) | Proposal   | Propose initial functionality with design and plan          |
-| [`5_initial_implementation_archive`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/5_initial_implementation_archive)   | Apply + Archive | Implement initial functionality                         |
-| [`6_config_file_proposal`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/6_config_file_proposal)                       | Proposal   | Propose configuration file enhancement with design and plan |
-| [`7_config_file_archive`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/7_config_file_archive)                         | Apply + Archive | Implement configuration file enhancement                |
+| Tag                                                                                                                                           | Phase           | Description                                                 |
+| --------------------------------------------------------------------------------------------------------------------------------------------- | --------------- | ----------------------------------------------------------- |
+| [`1_openspec_init`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/1_openspec_init)                                     | Init            | Initialize OpenSpec                                         |
+| [`2_project_setup_proposal`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/2_project_setup_proposal)                   | Proposal        | Propose change to setup the project                         |
+| [`3_project_setup_archive`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/3_project_setup_archive)                     | Apply + Archive | Implement and archive change to setup the project           |
+| [`4_initial_implementation_proposal`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/4_initial_implementation_proposal) | Proposal        | Propose initial functionality with design and plan          |
+| [`5_initial_implementation_archive`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/5_initial_implementation_archive)   | Apply + Archive | Implement initial functionality                             |
+| [`6_config_file_proposal`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/6_config_file_proposal)                       | Proposal        | Propose configuration file enhancement with design and plan |
+| [`7_config_file_archive`](https://github.com/your-org/feature-flag-rules-openspec/releases/tag/7_config_file_archive)                         | Apply + Archive | Implement configuration file enhancement                    |
 
 > Notes
 
-I instructed the Cursor agent to make *all* changes. This includes:
-* All OpenSpec specification and markdown documents. I described the proposals and changes I wanted made to them to the agent, who performed all creates and edits.
-* All code and GitHub workflows were written by Cursor and made all changes when defects were found.
+I instructed the Cursor agent to make _all_ changes. This includes:
 
-
+- All OpenSpec specification and markdown documents. I described the proposals and changes I wanted made to them to the agent, who performed all creates and edits.
+- All code and GitHub workflows were written by Cursor and made all changes when defects were found.
 
 ### OpenSpec Artifacts & Agent Instructions by Tag
 
@@ -45,12 +44,12 @@ For each tag, the tables below show **which OpenSpec artifacts were created or e
 
 **Coding agent quick reference**
 
-| Phase | Cursor command | When to use |
-|-------|----------------|-------------|
-| Init | `openspec init` (CLI) | Bootstrap `openspec/` structure and `project.md` |
+| Phase    | Cursor command           | When to use                                                                             |
+| -------- | ------------------------ | --------------------------------------------------------------------------------------- |
+| Init     | `openspec init` (CLI)    | Bootstrap `openspec/` structure and `project.md`                                        |
 | Proposal | **`/openspec-proposal`** | Create or update a change: `proposal.md`, `tasks.md`, optional `design.md`, spec deltas |
-| Apply | **`/openspec-apply`** | Implement an approved change per `tasks.md` |
-| Archive | **`/openspec-archive`** | Move completed change to `archive/` and refresh `specs/` |
+| Apply    | **`/openspec-apply`**    | Implement an approved change per `tasks.md`                                             |
+| Archive  | **`/openspec-archive`**  | Move completed change to `archive/` and refresh `specs/`                                |
 
 Full command definitions live in `.cursor/commands/` (`openspec-proposal`, `openspec-apply`, `openspec-archive`). See `openspec/AGENTS.md` for detailed workflow and CLI usage.
 
@@ -60,12 +59,12 @@ Full command definitions live in `.cursor/commands/` (`openspec-proposal`, `open
 
 **Artifacts created**
 
-| Path | Purpose |
-|------|---------|
-| `openspec/project.md` | Project context, conventions, domain, constraints |
-| `openspec/AGENTS.md` | OpenSpec instructions for AI assistants (workflow, CLI, spec format) |
-| `openspec/specs/` | Directory for current specifications |
-| `openspec/changes/` | Directory for change proposals and archive |
+| Path                  | Purpose                                                              |
+| --------------------- | -------------------------------------------------------------------- |
+| `openspec/project.md` | Project context, conventions, domain, constraints                    |
+| `openspec/AGENTS.md`  | OpenSpec instructions for AI assistants (workflow, CLI, spec format) |
+| `openspec/specs/`     | Directory for current specifications                                 |
+| `openspec/changes/`   | Directory for change proposals and archive                           |
 
 **Agent instructions**
 
@@ -78,11 +77,11 @@ Full command definitions live in `.cursor/commands/` (`openspec-proposal`, `open
 
 **Artifacts created**
 
-| Path | Purpose |
-|------|---------|
-| `openspec/changes/initialize-project-setup/proposal.md` | Why, what changes, impact |
-| `openspec/changes/initialize-project-setup/tasks.md` | Implementation checklist |
-| `openspec/changes/initialize-project-setup/design.md` | Technical decisions (tooling, structure) |
+| Path                                                                    | Purpose                                     |
+| ----------------------------------------------------------------------- | ------------------------------------------- |
+| `openspec/changes/initialize-project-setup/proposal.md`                 | Why, what changes, impact                   |
+| `openspec/changes/initialize-project-setup/tasks.md`                    | Implementation checklist                    |
+| `openspec/changes/initialize-project-setup/design.md`                   | Technical decisions (tooling, structure)    |
 | `openspec/changes/initialize-project-setup/specs/project-setup/spec.md` | Delta: ADDED requirements for project setup |
 
 **Agent instructions**
@@ -98,11 +97,11 @@ Full command definitions live in `.cursor/commands/` (`openspec-proposal`, `open
 
 **Artifacts created or enhanced**
 
-| Path | Purpose |
-|------|---------|
-| Project root | `package.json`, `tsconfig.json`, Prettier, ESLint, Vitest, GitHub Actions, etc. |
-| `openspec/changes/archive/YYYY-MM-DD-initialize-project-setup/` | Archived proposal, tasks, design, spec deltas |
-| `openspec/specs/project-setup/spec.md` | Current project-setup spec (updated from delta) |
+| Path                                                            | Purpose                                                                         |
+| --------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| Project root                                                    | `package.json`, `tsconfig.json`, Prettier, ESLint, Vitest, GitHub Actions, etc. |
+| `openspec/changes/archive/YYYY-MM-DD-initialize-project-setup/` | Archived proposal, tasks, design, spec deltas                                   |
+| `openspec/specs/project-setup/spec.md`                          | Current project-setup spec (updated from delta)                                 |
 
 **Agent instructions**
 
@@ -115,10 +114,10 @@ Full command definitions live in `.cursor/commands/` (`openspec-proposal`, `open
 
 **Artifacts created**
 
-| Path | Purpose |
-|------|---------|
-| `openspec/changes/add-initial-implementation/proposal.md` | Why, what changes, impact |
-| `openspec/changes/add-initial-implementation/tasks.md` | Implementation checklist |
+| Path                                                                           | Purpose                                          |
+| ------------------------------------------------------------------------------ | ------------------------------------------------ |
+| `openspec/changes/add-initial-implementation/proposal.md`                      | Why, what changes, impact                        |
+| `openspec/changes/add-initial-implementation/tasks.md`                         | Implementation checklist                         |
 | `openspec/changes/add-initial-implementation/specs/feature-evaluation/spec.md` | Delta: ADDED requirements for feature evaluation |
 
 **Agent instructions**
@@ -132,11 +131,11 @@ Full command definitions live in `.cursor/commands/` (`openspec-proposal`, `open
 
 **Artifacts created or enhanced**
 
-| Path | Purpose |
-|------|---------|
-| `src/index.ts`, `tests/index.test.ts` | Core evaluation logic and tests |
-| `openspec/changes/archive/YYYY-MM-DD-add-initial-implementation/` | Archived change |
-| `openspec/specs/feature-evaluation/spec.md` | Current feature-evaluation spec |
+| Path                                                              | Purpose                         |
+| ----------------------------------------------------------------- | ------------------------------- |
+| `src/index.ts`, `tests/index.test.ts`                             | Core evaluation logic and tests |
+| `openspec/changes/archive/YYYY-MM-DD-add-initial-implementation/` | Archived change                 |
+| `openspec/specs/feature-evaluation/spec.md`                       | Current feature-evaluation spec |
 
 **Agent instructions**
 
@@ -149,10 +148,10 @@ Full command definitions live in `.cursor/commands/` (`openspec-proposal`, `open
 
 **Artifacts created**
 
-| Path | Purpose |
-|------|---------|
-| `openspec/changes/add-config-file-support/proposal.md` | Why, what changes, impact |
-| `openspec/changes/add-config-file-support/tasks.md` | Implementation checklist |
+| Path                                                                        | Purpose                                                  |
+| --------------------------------------------------------------------------- | -------------------------------------------------------- |
+| `openspec/changes/add-config-file-support/proposal.md`                      | Why, what changes, impact                                |
+| `openspec/changes/add-config-file-support/tasks.md`                         | Implementation checklist                                 |
 | `openspec/changes/add-config-file-support/specs/feature-evaluation/spec.md` | Delta: ADDED/MODIFIED requirements for file-based config |
 
 **Agent instructions**
@@ -166,11 +165,11 @@ Full command definitions live in `.cursor/commands/` (`openspec-proposal`, `open
 
 **Artifacts created or enhanced**
 
-| Path | Purpose |
-|------|---------|
-| `src/index.ts` (and any new modules) | Config loading, YAML parsing, evaluation updates |
-| `openspec/changes/archive/YYYY-MM-DD-add-config-file-support/` | Archived change |
-| `openspec/specs/feature-evaluation/spec.md` | Updated spec including config file behavior |
+| Path                                                           | Purpose                                          |
+| -------------------------------------------------------------- | ------------------------------------------------ |
+| `src/index.ts` (and any new modules)                           | Config loading, YAML parsing, evaluation updates |
+| `openspec/changes/archive/YYYY-MM-DD-add-config-file-support/` | Archived change                                  |
+| `openspec/specs/feature-evaluation/spec.md`                    | Updated spec including config file behavior      |
 
 **Agent instructions**
 
